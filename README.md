@@ -22,9 +22,9 @@ A real-time multi-sensor perception pipeline that combines **YOLOv8 object detec
 
 ```text
 ┌─────────────────┐     ┌──────────────────────┐
-│  Camera Frame   │────▶│   YOLOv8 Detector    │
-│  (KITTI / Cam)  │     │  Bounding Boxes +     │
-└─────────────────┘     │  Class + Confidence   │
+│  Camera Frame   │────▶│   YOLOv8 Detector   │
+│  (KITTI / Cam)  │     │  Bounding Boxes +    │
+└─────────────────┘     │  Class + Confidence  │
                         └──────────┬───────────┘
                                    │
                         ┌──────────▼───────────┐
@@ -90,8 +90,8 @@ w_k = process noise
 
 **Measurement sources:**
 
-| Sensor            | Measurement                 | Noise Model              -|
-|-------------------|-----------------------------| --------------------------|
+| Sensor            | Measurement                 | Noise Model               |
+| ----------------- | --------------------------- | --------------------------|
 | Camera (YOLO)     | position (x, y)             | Gaussian σ = 10 px        |
 | Radar (simulated) | range r, radial velocity v  | Gaussian σ = 5.0, σ = 0.5 |
 
@@ -253,17 +253,16 @@ KITTI_SEQUENCE        = "0006"
 
 Evaluated on **KITTI Tracking Sequence 0006** (270 frames, real urban driving):
 
-| Metric | Value |
-|--------|-------|
-
-| Total Frames | **270** |
-| Avg Precision | **0.526** |
-| Avg Recall | **0.596** |
-| F1 Score | **0.559** |
-| RMSE Velocity | **0.206 px/frame** |
-| Total True Positives | **380** |
-| Total False Positives | **129** |
-| Total False Negatives | **27** |
+| Metric                | Value              |
+| ----------------------| -------------------|
+| Total Frames          | **270**            |
+| Avg Precision         | **0.526**          |
+| Avg Recall            | **0.596**          |
+| F1 Score              | **0.559**          |
+| RMSE Velocity         | **0.206 px/frame** |
+| Total True Positives  | **380**            |
+| Total False Positives | **129**            |
+| Total False Negatives | **27**             |
 
 > CPU inference only — YOLOv8n model — Windows 11
 
@@ -280,8 +279,7 @@ Evaluated on **KITTI Tracking Sequence 0006** (270 frames, real urban driving):
 ## 🎨 Visualization Legend
 
 | Color | Meaning |
-|-------|---------|
-
+| --- | --- |
 | 🟩 Green box | Raw YOLO detection |
 | 🔵 Blue dot + line | Simulated radar measurement |
 | 🟡 Yellow ring | Sensor fusion active on object |
@@ -310,8 +308,7 @@ Evaluated on **KITTI Tracking Sequence 0006** (270 frames, real urban driving):
 ## 🧰 Tech Stack
 
 | Library | Version | Purpose |
-|---------|---------|---------|
-
+| --------- | --------- | --------- |
 | ultralytics | 8.4.18 | YOLOv8 object detection |
 | deep-sort-realtime | 1.3.2 | Multi-object tracking |
 | filterpy | 1.4.5 | Kalman Filter |
