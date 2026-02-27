@@ -254,7 +254,7 @@ KITTI_SEQUENCE        = "0006"
 Evaluated on **KITTI Tracking Sequence 0006** (270 frames, real urban driving):
 
 | Metric                | Value              |
-| ----------------------| -------------------|
+| --------------------- | ------------------ |
 | Total Frames          | **270**            |
 | Avg Precision         | **0.526**          |
 | Avg Recall            | **0.596**          |
