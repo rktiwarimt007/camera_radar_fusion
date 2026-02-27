@@ -90,11 +90,10 @@ w_k = process noise
 
 **Measurement sources:**
 
-| Sensor | Measurement | Noise Model |
-|--------|-------------|-------------|
-
-| Camera (YOLO) | position (x, y) | Gaussian σ = 10 px |
-| Radar (simulated) | range r, radial velocity v | Gaussian σ = 5.0, σ = 0.5 |
+| Sensor            | Measurement                 | Noise Model              -|
+|-------------------|-----------------------------| --------------------------|
+| Camera (YOLO)     | position (x, y)             | Gaussian σ = 10 px        |
+| Radar (simulated) | range r, radial velocity v  | Gaussian σ = 5.0, σ = 0.5 |
 
 **Fusion update:**
 
@@ -210,9 +209,8 @@ python main.py
 
 ### Controls
 
-| Key | Action |
-|-----|--------|
-
+| Key | Action                          |
+|-----|---------------------------------|
 | `q` | Quit and save evaluation report |
 
 ### Outputs saved automatically
